@@ -10,6 +10,7 @@
   <packaging>jar</packaging>
   <name>FilePartReader testing with JUnit</name>
 
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -27,6 +28,8 @@
   </properties>
   
   <build>
+    <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -40,6 +43,20 @@
           <showWarnings>true</showWarnings>
           <showDeprecation>true</showDeprecation>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-maven-plugin</artifactId>
+        <version>4.5.3</version>
+        <executions>
+          <execution>
+            <id>antlr</id>
+            <goals>
+              <goal>antlr4</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
